@@ -32,10 +32,11 @@ router.get('/:id', async (req, res) => {
       }
     ]
   }); 
-  if(!tagData) {
+    if(!tagData) {
     res.status(400).json({ message: 'No tag with that id'})
-  }
-  } catch (err) {
+   }
+    res.status(200).json(tagData);
+    } catch (err) {
     res.status(500).json('Error in retrieving tag')
   }
 });
@@ -77,6 +78,7 @@ router.delete('/:id', async (req, res) => {
   if (!tagData) {
     res.status(400).json({ message: 'No tag with that id'})
   }
+    res.status(200).json(tagData);
   } catch (err) {
   res.status(500).json('Error in deleting tag')
   }
